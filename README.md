@@ -3,6 +3,8 @@
 [![Java Version](https://img.shields.io/badge/Java-21+-blue)](https://adoptium.net/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.2-brightgreen)](https://spring.io/projects/spring-boot)
 [![OpenFeign](https://img.shields.io/badge/OpenFeign-12.1-orange.svg)](https://github.com/OpenFeign/feign)
+
+
 Um projeto simples para praticar os conhecimentos em consumo de APIs REST usando Spring OpenFeign, conectado à API do Spotify.
 
 
