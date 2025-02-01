@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class AlbumServices {
+    public static final String GRANT_TYPE = "client_credentials";
     public static final String CLIENT_ID = "your_client_id";
     public static final String CLIENT_SECRET = "your_client_secret";
 
@@ -28,9 +29,9 @@ public class AlbumServices {
 
 
         LoginRequest loginRequest = new LoginRequest("client_credentials", CLIENT_ID, CLIENT_SECRET);
-        var token = authSpotifyClient.login(loginRequest).getAccessToken();
+        var token = "Bearer " + authSpotifyClient.login(loginRequest).getAccessToken();
 
-        var response = albumSpotifyClient.getAlbumsNewReleases("Bearer " + token);
+        var response = albumSpotifyClient.getAlbumsNewReleases(token);
         return response.getAlbums().getItems();
 
     }
