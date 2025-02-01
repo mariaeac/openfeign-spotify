@@ -4,6 +4,7 @@ import com.meac.spotify.client.AuthSpotifyClient;
 import com.meac.spotify.client.LoginRequest;
 import com.meac.spotify.client.albums.Album;
 import com.meac.spotify.client.albums.AlbumClient;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,9 +13,12 @@ import java.util.List;
 
 @Service
 public class AlbumServices {
-    public static final String GRANT_TYPE = "client_credentials";
-    public static final String CLIENT_ID = "your_client_id";
-    public static final String CLIENT_SECRET = "your_client_secret";
+
+    Dotenv dotenv = Dotenv.configure().load();
+
+    public final String GRANT_TYPE = "client_credentials";
+    public final String CLIENT_ID = dotenv.get("SPOTIFY_CLIENT_ID");
+    public final String CLIENT_SECRET =  dotenv.get("SPOTIFY_CLIENT_SECRET");
 
 
     private final AuthSpotifyClient authSpotifyClient;

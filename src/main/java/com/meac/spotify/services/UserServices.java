@@ -4,14 +4,18 @@ import com.meac.spotify.client.AuthSpotifyClient;
 import com.meac.spotify.client.LoginRequest;
 import com.meac.spotify.client.users.UserClient;
 import com.meac.spotify.client.users.UserResponse;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServices {
 
-    public static final String GRANT_TYPE = "client_credentials";
-    public static final String CLIENT_ID = "your_client_id";
-    public static final String CLIENT_SECRET = "your_client_secret";
+    Dotenv dotenv = Dotenv.configure().load();
+
+
+    public final String GRANT_TYPE = "client_credentials";
+    public final String CLIENT_ID = dotenv.get("SPOTIFY_CLIENT_ID");
+    public final String CLIENT_SECRET =  dotenv.get("SPOTIFY_CLIENT_SECRET");
 
     private UserClient userClient;
     private AuthSpotifyClient authSpotifyClient;
