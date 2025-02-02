@@ -21,9 +21,7 @@ Um projeto simples para praticar os conhecimentos em consumo de APIs REST usando
 ## 🚀 Configuração Rápida
 
 1. Clone o repositório:
-```bash
-git clone https://github.com/seu-user/spotify-openfeign-demo.git
-```
+
 2. Crie um arquivo .env na raiz do projeto:
 ```bash
 SPOTIFY_CLIENT_ID = SEU_CLIENT_ID
